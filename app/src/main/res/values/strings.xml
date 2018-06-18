@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Omam</string>
     <string name="action_settings">Settings</string>
+    <string-array name="position">
+        <item>Consultant</item>
+    <item>HR</item>
+    <item>Administration</item>
+    <item>Counselor</item>
+    <item>Marketing</item>
+    <item>Faculty</item>
+        <item>Center Head</item>
+        <item>Business</item>
+        <item>Telle Caller</item>
+        <item>Other</item>
+
+    </string-array>
+
+    <string-array name="branch">
+        <item>DWARKA</item>
+        <item>RAMA VIHAR</item>
+    </string-array>
 </resources>
