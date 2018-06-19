@@ -2,6 +2,7 @@
     <string name="app_name">Omam</string>
     <string name="action_settings">Settings</string>
     <string-array name="position">
+        <item>ENTER THE DEPARTMENT</item>
         <item>Consultant</item>
     <item>HR</item>
     <item>Administration</item>
@@ -16,6 +17,7 @@
     </string-array>
 
     <string-array name="branch">
+        <item>ENTER THE BRANCH</item>
         <item>DWARKA</item>
         <item>RAMA VIHAR</item>
     </string-array>

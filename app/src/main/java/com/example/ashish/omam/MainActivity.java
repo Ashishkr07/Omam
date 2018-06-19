@@ -2,6 +2,7 @@ package com.example.ashish.omam;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,9 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    DataBaseHelper dataBaseHelper;
     Button btn1,btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn1 = (Button)findViewById(R.id.button1);
         btn2 = (Button)findViewById(R.id.button2);
+        dataBaseHelper = new DataBaseHelper(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView textv1 = (TextView) findViewById(R.id.tv1);
                 TextView textv2 = (TextView) findViewById(R.id.tv2);
                 TextView textv3 = (TextView) findViewById(R.id.tv3);
+
 
                 nbuiler.setView(mview);
                 final AlertDialog alertDialog = nbuiler.create();
@@ -72,6 +77,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton fab3 = (FloatingActionButton) findViewById(R.id.fab3);
+        fab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Want to see employee List?", Snackbar.LENGTH_LONG)
+                        .setAction("Show", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Cursor res = dataBaseHelper.getAllData();
+                                if(res.getCount() == 0){
+                                    Toast.makeText(MainActivity.this,"No Data Found",Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                                StringBuffer buffer = new StringBuffer();
+                                while(res.moveToNext()) {
+                                    buffer.append("Id-" + res.getString(0) + "\n");
+                                    buffer.append( res.getString(1) + "\n");
+                                    buffer.append( res.getString(2) + "\n");
+                                    buffer.append( res.getString(3) + "\n");
+                                    buffer.append("\n");
+                                }
+                                showMessage("Data",buffer.toString());
+
+                            }
+                        }).show();
+            }
+        });
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +122,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -112,4 +148,15 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void showMessage(String title,String message) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle(title);
+        alertDialog.setCancelable(true);
+        alertDialog.setMessage(message);
+        alertDialog.show();
+    }
+
 }
+
+

@@ -43,5 +43,13 @@
         app:layout_anchorGravity="bottom|right"
         android:src="@drawable/positive"/>
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab3"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="64dp"
+        android:src="@drawable/showall" />
 
 </android.support.design.widget.CoordinatorLayout>

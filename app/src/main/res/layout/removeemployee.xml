@@ -8,76 +8,28 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"/>
-
-
+        android:layout_weight="8"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:id="@+id/edt11"
-        android:textStyle="italic"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:hint="ENTER THE NAME  (IN CAPITAL LETTERS)"
-        android:layout_weight="4"/>
+        android:layout_width="240dp"
+        android:layout_height="0dp"
+        android:hint="ENTER ID"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_weight="4"
+        android:ems="10"
+        android:inputType="number" />
 
-
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textStyle="italic"
-            android:textSize="16sp"
-            android:gravity="center_vertical"
-            android:textColor="@color/aqua"
-            android:hint="ENTER THE DEPARTMENT"
-            android:layout_weight="1"/>
-
-        <Spinner
-            android:layout_width="0dp"
-            android:id="@+id/spinr11"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textStyle="italic"
-            android:gravity="center_vertical"
-            android:textSize="16sp"
-            android:textColor="@color/aqua"
-            android:hint="ENTER THE BRANCH"
-            android:layout_weight="1"/>
-
-        <Spinner
-            android:layout_width="0dp"
-            android:id="@+id/spinr21"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-    </LinearLayout>
+        android:layout_weight="8"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="120dp"
+        android:id="@+id/btdel"
         android:layout_height="0dp"
-        android:text="REMOVE"
-        android:id="@+id/btadd"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_weight="6"/>
-
-
+        android:layout_gravity="center_horizontal"
+        android:text="DELETE"
+        android:layout_weight="4"/>
 </LinearLayout>
