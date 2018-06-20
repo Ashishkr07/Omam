@@ -4,11 +4,11 @@
     <string-array name="position">
         <item>ENTER THE DEPARTMENT</item>
         <item>Consultant</item>
-    <item>HR</item>
-    <item>Administration</item>
-    <item>Counselor</item>
-    <item>Marketing</item>
-    <item>Faculty</item>
+        <item>HR</item>
+        <item>Administration</item>
+        <item>Counselor</item>
+        <item>Marketing</item>
+        <item>Faculty</item>
         <item>Center Head</item>
         <item>Business</item>
         <item>Telle Caller</item>

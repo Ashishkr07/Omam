@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="8"
+    tools:context="com.example.ashish.omam.LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"/>
+
+    <EditText
+        android:id="@+id/editmail"
+        android:layout_width="wrap_content"
+        android:hint="Enter Email"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="94dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+
+    <EditText
+        android:id="@+id/editpass"
+        android:textSize="24sp"
+        android:hint="Enter Password"
+        android:layout_gravity="center"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btnchk"
+        android:layout_gravity="center"
+        android:layout_width="112dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="64dp"
+        android:text="log in"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="247dp" />
+    <Button
+        android:id="@+id/btnsignin"
+        android:layout_gravity="center"
+        android:layout_width="112dp"
+        android:layout_height="64dp"
+        android:text="sign up"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+</LinearLayout>
