@@ -18,7 +18,7 @@
 
     <string-array name="branch">
         <item>ENTER THE BRANCH</item>
-        <item>DWARKA</item>
-        <item>RAMA VIHAR</item>
+        <item>Dwarka</item>
+        <item>Rama Vihar</item>
     </string-array>
 </resources>

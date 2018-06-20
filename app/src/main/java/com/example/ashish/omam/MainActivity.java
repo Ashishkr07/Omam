@@ -19,6 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     DataBaseHelper dataBaseHelper;
+    TextView tv1;
     Button btn1,btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final AlertDialog.Builder nbuiler = new AlertDialog.Builder(MainActivity.this).setMessage("ACTION TO BE PERFORMED?");
                 View mview = View.inflate(MainActivity.this,R.layout.customlayout,null);
-                TextView textv1 = (TextView) findViewById(R.id.tv1);
+                TextView textv1 = mview.findViewById(R.id.tv1);
                 TextView textv2 = (TextView) findViewById(R.id.tv2);
                 TextView textv3 = (TextView) findViewById(R.id.tv3);
 
@@ -43,6 +44,27 @@ public class MainActivity extends AppCompatActivity {
                 nbuiler.setView(mview);
                 final AlertDialog alertDialog = nbuiler.create();
                 alertDialog.show();
+
+                textv1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Cursor res = dataBaseHelper.getbranchData();
+                        if(res.getCount() == 0){
+                            Toast.makeText(MainActivity.this,"No Data Found",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        StringBuffer buffer = new StringBuffer();
+                        while(res.moveToNext()) {
+                            buffer.append( res.getString(1) + "\n");
+                            buffer.append( res.getString(2) + "\n");
+                            buffer.append( res.getString(3) + "\n");
+                            buffer.append("\n");
+                        }
+                        showMessage("Dwarka",buffer.toString());
+                        alertDialog.dismiss();
+
+                    }
+                });
 
 
 
@@ -110,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final AlertDialog.Builder nbuiler = new AlertDialog.Builder(MainActivity.this).setTitle("ACTION TO BE PERFORMED?");
                 View mview = View.inflate(MainActivity.this,R.layout.customlayout,null);
-                TextView textv1 = (TextView) findViewById(R.id.tv1);
+                TextView textv1 = mview.findViewById(R.id.tv1);
                 TextView textv2 = (TextView) findViewById(R.id.tv2);
                 TextView textv3 = (TextView) findViewById(R.id.tv3);
 
@@ -119,6 +141,25 @@ public class MainActivity extends AppCompatActivity {
                 alertDialog.show();
 
 
+                textv1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Cursor res = dataBaseHelper.getRbranchData();
+                        if(res.getCount() == 0){
+                            Toast.makeText(MainActivity.this,"No Data Found",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        StringBuffer buffer = new StringBuffer();
+                        while(res.moveToNext()) {
+                            buffer.append( res.getString(1) + "\n");
+                            buffer.append( res.getString(2) + "\n");
+                            buffer.append( res.getString(3) + "\n");
+                            buffer.append("\n");
+                        }
+                        showMessage("Rama Vihar",buffer.toString());
+                        alertDialog.dismiss();
+                    }
+                });
 
             }
         });

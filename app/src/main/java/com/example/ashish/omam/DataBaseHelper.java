@@ -43,6 +43,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+
     public Cursor getAllData(){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME,null);
@@ -50,6 +52,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public Cursor getbranchData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME + " where " + COL4 +"='Dwarka'" ,null);
+        return cursor;
+
+    }
+
+    public Cursor getRbranchData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME + " where " + COL4 +"='Rama Vihar'" ,null);
+        return cursor;
+
+    }
 
 
     public int deleteData(String id){
