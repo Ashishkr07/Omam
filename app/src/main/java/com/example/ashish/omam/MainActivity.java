@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 View mview = View.inflate(MainActivity.this,R.layout.customlayout,null);
                 TextView textv1 = mview.findViewById(R.id.tv1);
                 TextView textv2 = (TextView) findViewById(R.id.tv2);
-                TextView textv3 = (TextView) findViewById(R.id.tv3);
+                TextView textv3 = mview.findViewById(R.id.tv3);
 
 
                 nbuiler.setView(mview);
@@ -66,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+                textv3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(MainActivity.this,GoogleMaps.class));
+                    }
+                });
 
 
             }
@@ -134,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 View mview = View.inflate(MainActivity.this,R.layout.customlayout,null);
                 TextView textv1 = mview.findViewById(R.id.tv1);
                 TextView textv2 = (TextView) findViewById(R.id.tv2);
-                TextView textv3 = (TextView) findViewById(R.id.tv3);
+                TextView textv3 = mview.findViewById(R.id.tv3);
 
                 nbuiler.setView(mview);
                 final AlertDialog alertDialog = nbuiler.create();
@@ -158,6 +164,13 @@ public class MainActivity extends AppCompatActivity {
                         }
                         showMessage("Rama Vihar",buffer.toString());
                         alertDialog.dismiss();
+                    }
+                });
+
+                textv3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(MainActivity.this,GoogleMaps.class));
                     }
                 });
 
